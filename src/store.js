@@ -1,0 +1,16 @@
+import React from 'react';
+
+export default class Store extends React.Component {
+	constructor(props) {
+		super(props);
+		//Main App State(not Redux like)
+		this.state = {
+			appName: "Whather Up"
+		}
+	}
+	render() {
+		return React.Children.map()((this.props.children, (child) => {
+			return React.cloneElement(child, { ...this.state });
+		});
+	}
+}
