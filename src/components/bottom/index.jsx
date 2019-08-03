@@ -8,6 +8,6 @@ export default class BottomSection extends React.Component {
 	}
 
 	render() {
-		return <div>BOTTOM SECTION</div>
+		return <div className="bottom-container" />
 	}
 }

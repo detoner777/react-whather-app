@@ -28,3 +28,7 @@ body,
 .app-container .maine-container .bottom-section {
   flex: 0 0 50%;
 }
+.btn {
+  border: 1px solid white;
+  margin: 15px 0;
+}
