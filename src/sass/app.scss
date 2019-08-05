@@ -37,7 +37,7 @@ body,
 	border: 1px solid white;
 	margin: 15px 0;
 	cursor: pointer;
-	
+		
 	&:focus {
 		outline: none;
 	}
@@ -56,7 +56,7 @@ body,
 	background-color: #fff;
 	box-shadow: 0px 0px 5px 2px rgba(15, 15, 15, 0.2);
 	font-size: 16px;
-
+	padding: 10px;
 }
 
 .form-container {
@@ -68,5 +68,14 @@ body,
 	input {
 		border-radius: 2px;
 		border: 1px solid rgba(15, 15, 15, 0.2);
+		
 	}
+}
+
+.popper-btn {
+	padding: 3px;
+	position:absolute;
+	bottom:-10px;
+left: 10px;
+
 }

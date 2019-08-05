@@ -12,11 +12,31 @@ export default class TopSection extends React.Component {
 	}
 
 	onToggleSelectLocation() {
-		this.setState((prevState) => ({ isSelectLocationOpen: !prevState.isSelectLocationOpen }));
+		this.setState(prevState => ({
+			isSelectLocationOpen: !prevState.isSelectLocationOpen
+		}));
+	}
+
+	onLocationNameChange(e) {
+		this.setState({
+			locationName: e.target.value,
+
+		});
+
+	}
+
+	onSelectCity() {
+		const { locationName } = this.state;
+		const { eventEmitter } = this.props;
+
+		eventEmitter.emit("updateWeather", locationName);
+		this.setState({ isSelectLocationOpen: false });
+
 	}
 
 	render() {
 		const { isSelectLocationOpen } = this.state;
+
 
 		return (
 			<div className="top-container">
@@ -43,8 +63,10 @@ export default class TopSection extends React.Component {
 									<input
 										id="location-name"
 										type="text"
-										placeholder="City Name" />
-									<button className='btn btn-select-location'>Select</button>
+										placeholder="City Name"
+										onChange={this.onLocationNameChange.bind(this)}
+									/>
+									<button className='btn popper-btn btn-select-location' onClick={this.onSelectCity.bind(this)}> Select</button>
 								</div>
 								<div ref={arrowProps.ref} style={arrowProps.style} />
 							</div>
