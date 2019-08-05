@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Sun from "../../resources/icons/sun.png"
+// import Sun from "../../resources/icons/sun.png"
 
 export default class Weather extends React.Component {
 	constructor(props) {
@@ -8,14 +8,18 @@ export default class Weather extends React.Component {
 	}
 
 	render() {
-		return <div className="weather-container">
-			<div className="header">Location Name</div>
-			<div className="inner-container">
-				<div className='image'><img src={Sun} alt="" /></div>
-				<div className="current-weather">10</div>
-			</div>
-			<div className="footer">Sunny</div>
+		const { location, temp_c, isDay, text, iconURL } = this.props;
 
-		</div>
+		return (
+			<div className="weather-container">
+				<div className="header">{location}</div>
+				<div className="inner-container">
+					<div className='image'><img src={iconURL} alt="" /></div>
+					<div className="current-weather">{temp_c}°</div>
+				</div>
+				<div className="footer">{text}</div>
+
+			</div>
+		);
 	}
 }
